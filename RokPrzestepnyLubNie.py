@@ -1,14 +1,19 @@
 def czy_przestepny(rok):
-    if(rok % 4 == 0):
-        if(rok % 100 == 0):
-            if(rok % 400 == 0):
-               return print("Rok jest przestepny - sklada sie z 366 dni. ")
+    if rok % 400 == 0:
+        return True
+    elif rok % 100 == 0:
+        return False
+    elif rok % 4 == 0:
+        return True
     else:
-        return print("Rok normlany. ")
+        return False
 
 def main():
     rok = int(input("Podaj rok do sprawdzenia: "))
-    czy_przestepny(rok)
+    if czy_przestepny(rok):
+        print("Rok jest przestępny - składa się z 366 dni.")
+    else:
+        print("Rok jest zwykły - składa się z 365 dni.")
 
 if __name__ == "__main__":
     main()
